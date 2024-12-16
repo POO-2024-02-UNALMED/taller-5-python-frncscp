@@ -1,4 +1,4 @@
-from animal import Animal, setBase
+from .animal import Animal, setBase
 from gestion.zona import Zona
 
 class Ave(Animal):
@@ -24,17 +24,17 @@ class Ave(Animal):
         return "volar"
 
     @classmethod
-    def crearHalcon(cls, nombre: str, edad: int, genero: str, zona: Zona):
+    def crearHalcon(cls, nombre: str, edad: int, genero: str):
         halcon = cls("cafe glorioso")
-        setBase(halcon, nombre, edad, "montañas", genero, zona)
+        setBase(halcon, nombre, edad, "montañas", genero)
         cls._listado.append(halcon)
         cls._halcones += 1
         return halcon
 
     @classmethod
-    def crearAguila(cls, nombre: str, edad: int, genero: str, zona: Zona):
+    def crearAguila(cls, nombre: str, edad: int, genero: str):
         aguila = cls("blanco y amarillo")
-        setBase(aguila, nombre, edad, "montañas", genero, zona)
+        setBase(aguila, nombre, edad, "montañas", genero)
         cls._listado.append(aguila)
         cls._aguilas += 1
         return aguila

@@ -3,10 +3,11 @@ class Zoologico:
     #_ubicacion = None
     #_zonas = None
 
-    def __init__(self, nombre: str, ubic: str, zonas: list) -> None:
+    def __init__(self, nombre: str, ubic: str) -> None:
         self._nombre = nombre
         self._ubicacion = ubic
-        self.zonas = zonas
+        self._zonas = list()
+        #self.zonas = zonas
     
     def agregarZonas(self, zona: list) -> None:
         self._zonas.append(zona)

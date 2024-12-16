@@ -6,10 +6,10 @@ class Zona:
     #_zoo = None
     #_animales = None
 
-    def __init__(self, nombre: str, zoo: Zoologico, animales: list) -> None:
+    def __init__(self, nombre: str):#, zoo: Zoologico, animales: list) -> None:
         self._nombre = nombre
-        self._zoo = zoo
-        self._animales = animales
+        self._zoo = None
+        self._animales = list()
 
     def agregarAnimales(self, animal) -> None:
         self._animales.append(animal)

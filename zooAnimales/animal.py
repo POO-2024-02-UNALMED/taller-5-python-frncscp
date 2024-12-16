@@ -1,5 +1,3 @@
-import sys
-sys.path.append('/home/franc/code/oop/python/taller-5-python-frncscp/')
 from gestion.zona import Zona
 
 class Animal:
@@ -56,9 +54,8 @@ class Animal:
     def getTotalAnimales(cls) -> int:
         return cls._totalAnimales
     
-def setBase(obj: Animal, nombre: str, edad: int, habitat: str, genero: str, zona):
+def setBase(obj: Animal, nombre: str, edad: int, habitat: str, genero: str):
     obj.setNombre(nombre)
     obj.setEdad(edad)
     obj.setHabitat(habitat)
     obj.setGenero(genero)
-    obj.setZona(zona)

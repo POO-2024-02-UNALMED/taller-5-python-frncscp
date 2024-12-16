@@ -1,12 +1,13 @@
-from animal import setBase
+from .animal import setBase, Animal
 from gestion.zona import Zona
 
-class Pez:
+class Pez(Animal):
     _listado = []
     _salmones = 0
     _bacalaos = 0
 
     def __init__(self, colorEscamas: str, cantidadAletas: int) -> None:
+        super().__init__()
         self._colorEscamas = colorEscamas
         self._cantidadAletas = cantidadAletas
 
@@ -27,17 +28,17 @@ class Pez:
         return len(cls._listado)
 
     @classmethod
-    def crearSalmon(cls, nombre: str, edad: int, genero: str, zona: Zona):
+    def crearSalmon(cls, nombre: str, edad: int, genero: str):
         salmon = cls("rojo", 6)
-        setBase(salmon, nombre, edad, "océano", genero, zona)
+        setBase(salmon, nombre, edad, "océano", genero)
         cls._listado.append(salmon)
         cls._salmones += 1
         return salmon
 
     @classmethod
-    def crearBacalao(cls, nombre: str, edad: int, genero: str, zona: Zona):
+    def crearBacalao(cls, nombre: str, edad: int, genero: str):
         bacalao = cls("gris", 6)
-        setBase(bacalao, nombre, edad, "océano", genero, zona)
+        setBase(bacalao, nombre, edad, "océano", genero)
         cls._listado.append(bacalao)
         cls._bacalaos += 1
         return bacalao
@@ -49,3 +50,6 @@ class Pez:
     @classmethod
     def cantidadBacalaos(cls) -> int:
         return cls._bacalaos
+    
+    def movimiento() -> str:
+        return "nadar"

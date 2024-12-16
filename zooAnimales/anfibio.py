@@ -1,4 +1,4 @@
-from animal import Animal, setBase
+from .animal import Animal, setBase
 from gestion.zona import Zona
 
 class Anfibio(Animal):
@@ -19,17 +19,17 @@ class Anfibio(Animal):
         return "saltar"
     
     @classmethod
-    def crearRana(cls, nombre: str, edad: int, habitat: str, genero: str, zona: Zona):
+    def crearRana(cls, nombre: str, edad: int, genero: str):
         rana = cls("rojo", True)
-        setBase(rana, nombre, edad, "selva", genero, zona)
+        setBase(rana, nombre, edad, "selva", genero)
         cls._ranas += 1
         cls._listado.append(rana)
         return rana
 
     @classmethod
-    def crearSalamandra(cls, nombre: str, edad: int, habitat: str, genero: str, zona: Zona):
+    def crearSalamandra(cls, nombre: str, edad: int, genero: str):
         salamandra = cls("negro y amarillo", False)
-        setBase(salamandra, nombre, edad, "selva", genero, zona)
+        setBase(salamandra, nombre, edad, "selva", genero)
         cls._salamandras += 1
         cls._listado.append(salamandra)
         return salamandra

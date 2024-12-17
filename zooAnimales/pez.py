@@ -23,7 +23,7 @@ class Pez(Animal):
         cls.bacalaos += 1
         return bacalao
     
-    @staticmethod
+    @classmethod
     def crearSalmon(cls, nombre, edad, genero):
         salmon = cls(nombre, edad, "oceano", genero, "rojo", 6)
         cls.salmones += 1

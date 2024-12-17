@@ -2,7 +2,7 @@ from .animal import Animal
 
 class Pez(Animal):
 
-    _listado = list()
+    listado = []
     bacalaos = 0
     salmones = 0
 
@@ -10,7 +10,7 @@ class Pez(Animal):
         super().__init__(nombre, edad, habitat, genero)
         self._colorEscamas = colorEscamas
         self._cantidadAletas = cantidadAletas
-        Pez._listado.append(self)
+        Pez.listado.append(self)
 
     @classmethod
     def cantidadPeces(cls): return len(cls._listado)
